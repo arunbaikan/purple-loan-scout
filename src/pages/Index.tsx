@@ -1,5 +1,5 @@
-import { HappirateSplitAuth } from "@/components/HappirateSplitAuth";
+import { HappirateLanding } from "@/components/HappirateLanding";
 
-const Index = () => <HappirateSplitAuth />;
+const Index = () => <HappirateLanding />;
 
 export default Index;
