@@ -49,7 +49,7 @@ export function HappirateLoanInquiryForm({ onBack }: { onBack?: () => void }) {
   );
 
   return (
-    <Card className="w-full max-w-md border-border/70 bg-card/85 shadow-elev backdrop-blur supports-[backdrop-filter]:bg-card/70">
+    <Card className="w-full max-w-md border-border/70 bg-card/70 shadow-elev backdrop-blur-xl supports-[backdrop-filter]:bg-card/50">
       <CardHeader className="space-y-2">
         <CardTitle className="text-2xl">Loan inquiry</CardTitle>
         <CardDescription className="text-pretty">
