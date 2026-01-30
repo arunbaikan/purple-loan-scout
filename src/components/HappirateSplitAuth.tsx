@@ -1,6 +1,7 @@
 import * as React from "react";
 import happirateLogo from "@/assets/happirate-logo.png";
 import { AuroraBackdrop } from "@/components/AuroraBackdrop";
+import { HappirateLoanInquiryForm } from "@/components/HappirateLoanInquiryForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -46,17 +47,20 @@ function GoogleMark(props: React.SVGProps<SVGSVGElement>) {
 export function HappirateSplitAuth() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [isSignedIn, setIsSignedIn] = React.useState(false);
 
   const onEmailLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.message("Sign-in clicked", {
-      description: "UI only for now — we can wire real auth next.",
+    setIsSignedIn(true);
+    toast.message("Signed in (UI only)", {
+      description: "Showing the next-step form. We can wire real login later.",
     });
   };
 
   const onGoogle = () => {
-    toast.message("Google sign-in clicked", {
-      description: "UI only for now — we can wire real auth next.",
+    setIsSignedIn(true);
+    toast.message("Google sign-in (UI only)", {
+      description: "Showing the next-step form. We can wire real login later.",
     });
   };
 
@@ -112,65 +116,78 @@ export function HappirateSplitAuth() {
 
           {/* Right auth card */}
           <section className="flex items-center justify-center lg:justify-end">
-            <Card
-              className={cn(
-                "w-full max-w-md border-border/70 bg-card/75 shadow-elev backdrop-blur",
-                "supports-[backdrop-filter]:bg-card/55",
-              )}
-            >
-              <CardHeader className="space-y-2 text-center">
-                <CardTitle className="text-2xl">Welcome back</CardTitle>
-                <CardDescription>Sign in to access your collections and downloads</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Button type="button" variant="outline" className="w-full" onClick={onGoogle}>
-                  <GoogleMark className="mr-2 size-5" />
-                  Continue with Google
-                </Button>
-
-                <div className="flex items-center gap-3">
-                  <Separator className="flex-1" />
-                  <span className="text-xs text-muted-foreground">OR CONTINUE WITH EMAIL</span>
-                  <Separator className="flex-1" />
-                </div>
-
-                <form onSubmit={onEmailLogin} className="space-y-3">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Email</label>
-                    <Input
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="you@example.com"
-                      type="email"
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Password</label>
-                    <Input
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder="••••••••"
-                      type="password"
-                      required
-                    />
-                  </div>
-
-                  <Button type="submit" variant="hero" className="w-full">
-                    Sign In
+            {isSignedIn ? (
+              <HappirateLoanInquiryForm onBack={() => setIsSignedIn(false)} />
+            ) : (
+              <Card
+                className={cn(
+                  "w-full max-w-md border-border/70 bg-card/75 shadow-elev backdrop-blur",
+                  "supports-[backdrop-filter]:bg-card/55",
+                )}
+              >
+                <CardHeader className="space-y-2 text-center">
+                  <CardTitle className="text-2xl">Welcome back</CardTitle>
+                  <CardDescription>Sign in to access your collections and downloads</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <Button type="button" variant="outline" className="w-full" onClick={onGoogle}>
+                    <GoogleMark className="mr-2 size-5" />
+                    Continue with Google
                   </Button>
-                </form>
 
-                <p className="text-center text-sm text-muted-foreground">
-                  Don&apos;t have an account? <a className="text-primary underline-offset-4 hover:underline" href="#">Sign up</a>
-                </p>
-                <p className="text-center text-xs text-muted-foreground">
-                  By continuing, you agree to our <a className="underline-offset-4 hover:underline" href="#">Terms of Service</a> and{" "}
-                  <a className="underline-offset-4 hover:underline" href="#">Privacy Policy</a>
-                </p>
-              </CardContent>
-            </Card>
+                  <div className="flex items-center gap-3">
+                    <Separator className="flex-1" />
+                    <span className="text-xs text-muted-foreground">OR CONTINUE WITH EMAIL</span>
+                    <Separator className="flex-1" />
+                  </div>
+
+                  <form onSubmit={onEmailLogin} className="space-y-3">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Email</label>
+                      <Input
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="you@example.com"
+                        type="email"
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Password</label>
+                      <Input
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="••••••••"
+                        type="password"
+                        required
+                      />
+                    </div>
+
+                    <Button type="submit" variant="hero" className="w-full">
+                      Sign In
+                    </Button>
+                  </form>
+
+                  <p className="text-center text-sm text-muted-foreground">
+                    Don&apos;t have an account?{" "}
+                    <a className="text-primary underline-offset-4 hover:underline" href="#">
+                      Sign up
+                    </a>
+                  </p>
+                  <p className="text-center text-xs text-muted-foreground">
+                    By continuing, you agree to our{" "}
+                    <a className="underline-offset-4 hover:underline" href="#">
+                      Terms of Service
+                    </a>{" "}
+                    and{" "}
+                    <a className="underline-offset-4 hover:underline" href="#">
+                      Privacy Policy
+                    </a>
+                  </p>
+                </CardContent>
+              </Card>
+            )}
           </section>
         </div>
       </div>
