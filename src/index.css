@@ -42,9 +42,10 @@ All colors MUST be HSL.
     /* Signature surfaces */
     --shadow-elev: 0 18px 60px -28px hsl(var(--primary) / 0.55);
     --shadow-soft: 0 12px 30px -18px hsl(255 30% 10% / 0.18);
-    --gradient-hero: radial-gradient(900px circle at var(--mx, 20%) var(--my, 20%), hsl(285 85% 70% / 0.35), transparent 55%),
-      radial-gradient(700px circle at 85% 20%, hsl(250 90% 70% / 0.26), transparent 55%),
-      linear-gradient(135deg, hsl(268 80% 96%), hsl(258 65% 98%));
+    /* User-requested background palette (converted from #1e2a78 → #4b4e85) */
+    --gradient-hero: radial-gradient(900px circle at var(--mx, 20%) var(--my, 20%), hsl(232 60% 29% / 0.28), transparent 55%),
+      radial-gradient(700px circle at 85% 20%, hsl(237 28% 41% / 0.24), transparent 55%),
+      linear-gradient(135deg, hsl(232 60% 98%), hsl(237 28% 97%));
     --gradient-cta: linear-gradient(135deg, hsl(266 78% 55%), hsl(246 85% 62%));
     --gradient-cta-hover: linear-gradient(135deg, hsl(266 78% 50%), hsl(246 85% 56%));
 
@@ -96,9 +97,9 @@ All colors MUST be HSL.
 
     --shadow-elev: 0 20px 65px -34px hsl(var(--primary) / 0.55);
     --shadow-soft: 0 12px 30px -18px hsl(0 0% 0% / 0.35);
-    --gradient-hero: radial-gradient(900px circle at var(--mx, 20%) var(--my, 20%), hsl(285 90% 70% / 0.24), transparent 55%),
-      radial-gradient(700px circle at 85% 20%, hsl(250 90% 70% / 0.18), transparent 55%),
-      linear-gradient(135deg, hsl(255 35% 8%), hsl(255 35% 7%));
+    --gradient-hero: radial-gradient(900px circle at var(--mx, 20%) var(--my, 20%), hsl(232 60% 29% / 0.22), transparent 55%),
+      radial-gradient(700px circle at 85% 20%, hsl(237 28% 41% / 0.18), transparent 55%),
+      linear-gradient(135deg, hsl(235 35% 8%), hsl(235 35% 7%));
     --gradient-cta: linear-gradient(135deg, hsl(266 88% 68%), hsl(246 92% 70%));
     --gradient-cta-hover: linear-gradient(135deg, hsl(266 88% 62%), hsl(246 92% 64%));
     --sidebar-background: 240 5.9% 10%;
