@@ -10,7 +10,8 @@ All colors MUST be HSL.
   :root {
     /* Happirate theme (purple, premium, high-contrast) */
     --background: 258 60% 98%;
-    --foreground: 255 30% 10%;
+    /* Darker text for better contrast on brighter backgrounds */
+    --foreground: 255 35% 8%;
 
     --card: 0 0% 100%;
     --card-foreground: 255 30% 10%;
@@ -22,13 +23,14 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 100%;
 
     --secondary: 260 35% 95%;
-    --secondary-foreground: 255 30% 14%;
+    --secondary-foreground: 255 35% 10%;
 
     --muted: 260 35% 95%;
-    --muted-foreground: 255 12% 38%;
+    /* Darken muted text slightly for legibility */
+    --muted-foreground: 255 14% 30%;
 
     --accent: 268 70% 94%;
-    --accent-foreground: 255 30% 14%;
+    --accent-foreground: 255 35% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -41,11 +43,12 @@ All colors MUST be HSL.
 
     /* Signature surfaces */
     --shadow-elev: 0 18px 60px -28px hsl(var(--primary) / 0.55);
-    --shadow-soft: 0 12px 30px -18px hsl(255 30% 10% / 0.18);
-    /* User-requested background palette (converted from #1e2a78 → #4b4e85) */
-    --gradient-hero: radial-gradient(900px circle at var(--mx, 20%) var(--my, 20%), hsl(232 60% 29% / 0.28), transparent 55%),
-      radial-gradient(700px circle at 85% 20%, hsl(237 28% 41% / 0.24), transparent 55%),
-      linear-gradient(135deg, hsl(232 60% 98%), hsl(237 28% 97%));
+    --shadow-soft: 0 12px 30px -18px hsl(255 35% 8% / 0.18);
+    /* User-requested background palette (converted from #1e2a78 → #4b4e85)
+       Boosted intensity so the aurora shows more behind cards. */
+    --gradient-hero: radial-gradient(980px circle at var(--mx, 20%) var(--my, 20%), hsl(232 60% 29% / 0.40), transparent 58%),
+      radial-gradient(820px circle at 85% 20%, hsl(237 28% 41% / 0.34), transparent 58%),
+      linear-gradient(135deg, hsl(232 55% 96%), hsl(237 26% 95%));
     --gradient-cta: linear-gradient(135deg, hsl(266 78% 55%), hsl(246 85% 62%));
     --gradient-cta-hover: linear-gradient(135deg, hsl(266 78% 50%), hsl(246 85% 56%));
 
@@ -83,7 +86,7 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 100%;
 
     --muted: 255 24% 14%;
-    --muted-foreground: 255 16% 72%;
+    --muted-foreground: 255 18% 74%;
 
     --accent: 258 28% 16%;
     --accent-foreground: 0 0% 100%;
@@ -97,9 +100,9 @@ All colors MUST be HSL.
 
     --shadow-elev: 0 20px 65px -34px hsl(var(--primary) / 0.55);
     --shadow-soft: 0 12px 30px -18px hsl(0 0% 0% / 0.35);
-    --gradient-hero: radial-gradient(900px circle at var(--mx, 20%) var(--my, 20%), hsl(232 60% 29% / 0.22), transparent 55%),
-      radial-gradient(700px circle at 85% 20%, hsl(237 28% 41% / 0.18), transparent 55%),
-      linear-gradient(135deg, hsl(235 35% 8%), hsl(235 35% 7%));
+    --gradient-hero: radial-gradient(980px circle at var(--mx, 20%) var(--my, 20%), hsl(232 60% 40% / 0.26), transparent 58%),
+      radial-gradient(820px circle at 85% 20%, hsl(237 28% 48% / 0.20), transparent 58%),
+      linear-gradient(135deg, hsl(235 38% 8%), hsl(235 38% 7%));
     --gradient-cta: linear-gradient(135deg, hsl(266 88% 68%), hsl(246 92% 70%));
     --gradient-cta-hover: linear-gradient(135deg, hsl(266 88% 62%), hsl(246 92% 64%));
     --sidebar-background: 240 5.9% 10%;
