@@ -85,7 +85,7 @@ export function HappirateSplitAuth() {
 
             <div className="mt-8 space-y-4">
               <h1 className="text-balance text-5xl font-semibold tracking-tight sm:text-6xl">
-                Compare &amp; Secure <span className="text-primary">Smarter Loans</span>
+                Compare &amp; Secure <span className="text-loan-accent">Smarter Loans</span>
               </h1>
               <p className="max-w-xl text-pretty text-lg text-muted-foreground">
                 India’s first transparent loan comparison platform with zero spam and no credit score damage.
@@ -121,8 +121,8 @@ export function HappirateSplitAuth() {
             ) : (
               <Card
                 className={cn(
-                  "w-full max-w-md border-border/70 bg-card/75 shadow-elev backdrop-blur",
-                  "supports-[backdrop-filter]:bg-card/55",
+                "w-full max-w-md border-border/70 bg-card/60 shadow-elev backdrop-blur-xl",
+                "supports-[backdrop-filter]:bg-card/42",
                 )}
               >
                 <CardHeader className="space-y-2 text-center">
